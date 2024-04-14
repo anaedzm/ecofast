@@ -1,0 +1,293 @@
+.centered
+    text-align: center
+
+.button
+    display: block
+    padding: 15px 5px
+    width: 100%
+    max-width: 350px
+    border-radius: 62px
+
+a, button
+  color: inherit
+  text-decoration: inherit
+  border: 0
+
+button
+    cursor: pointer
+
+svg
+    max-width: 100%
+    
+
+.horarios, .datos
+    letter-spacing: 2px
+    font-size: 26px
+    display: flex
+    justify-content: flex-end
+    align-items: center
+    @media (max-width: 724px)
+        display: block
+        font-size: 22px
+
+.intro
+    width: 100vw
+    max-width: 100%
+    height: 100vh
+    max-height: 100%
+    display: flex
+    flex-direction: column
+    justify-content: center
+    position: relative
+    overflow: hidden
+    @media (max-width: 724px)
+        display: block
+        flex-direction: unset
+    img
+        object-fit: cover
+        width: 100%
+        height: 100% 
+        position: absolute
+    .main-title
+        color: $primary-softer
+        position: relative
+        align-self: flex-end
+        text-align: center
+        margin: 0 auto 5vh
+        padding: 0 35px
+        @media (max-width: 724px)
+            padding: 0 15px
+            align-self: unset
+    .sparks
+        max-width: 80%
+        margin: 0 auto 10vh
+        width: 100%
+        position: relative
+        display: flex
+        align-items: center
+        @media (max-width: 724px)
+            height: 50%
+    .sparks-l
+        @media (max-width: 640px)
+            margin-left: -25vw
+    .sparks-r
+        margin-left: auto
+        @media (max-width: 640px)
+            margin-right: -20vw
+    .datos
+        @media (max-width: 724px)
+            margin: 1rem auto
+            justify-content: center
+        span
+            width: 300px
+            height: 1px 
+            background-color: $primary-softer
+            display: block
+            margin: 0 2rem
+            @media (max-width: 724px)
+                margin: 1rem auto
+.invited
+    padding: 150px 35px 85px
+    @media (max-width: 640px)
+        padding: 90px 35px 60px
+    position: relative
+    svg
+        position: absolute
+        left: 0
+        right: 0
+        margin: 0 auto
+        top: 5%
+        @media (max-width: 640px)
+            max-width: 95%
+    .h2
+        margin-bottom: 35px
+    .work-sans
+        font-size: 24px
+        @media (max-width: 640px)
+            font-size: 18px
+            line-height: 1.5rem
+    .counter
+        color: $base
+        display: flex
+        align-items: center
+        justify-content: space-between
+        margin:153px auto
+        width: 1024px
+        max-width: 100%
+        @media (max-width: 640px)
+            margin: 85px auto 40px
+        .num
+            font-size: 128px
+            margin-bottom: 65px
+            @media (max-width: 640px)
+                font-size: 65px
+                margin-bottom: 20px
+.fecha
+    padding: 150px 35px 150px
+    @media (max-width: 640px)
+        padding: 80px 35px
+    background-color: $bg
+    color: #fff
+    @media (max-width: 640px)
+        h2.h2
+            font-size: 35px
+    .itinerario
+        margin-top: 150px
+        display: flex
+        align-items: center
+        justify-content: center
+        @media (max-width: 780px)
+                display: block
+                margin-top: 35px
+                svg
+                    max-width: 60px
+                
+        svg
+            margin-right: 5vw
+            
+    .horarios
+        display: flex
+        flex-direction: column
+        width: 100%
+        max-width: 800px
+        .horario
+            font-size: 24px
+            display: flex
+            width: 100%
+            align-items: center
+            height: 80px
+            position: relative
+            @media (max-width: 640px)
+                font-size: 18px
+            .work-sans
+                font-size: 14px
+                position: absolute
+                left: 45px
+                top: 85px
+                letter-spacing: 0
+            &.rob
+                height: 100px
+            span
+                width: 300px
+                height: 1px 
+                background-color: rgba(255,255,255, 37%)
+                display: block
+                margin: 0 2rem
+                @media (max-width: 640px)
+                    width: 80px
+                
+.map
+    height: 600px
+    width: 100%
+    iframe
+        height: 600px
+        width: 100%
+
+.fotos
+    display: grid
+    height: 100%
+    grid-template-columns: 1fr 1fr 1fr
+    grid-template-rows: auto auto auto
+    div
+        img
+            width: 100%
+            height: 100%
+            object-fit: cover
+            object-position: center center
+        &.two
+            grid-row-start: 2
+        &.three
+            grid-column-start: span 2
+            grid-row-end: span 2
+.mesa
+    background-color: $bg
+    padding: 150px 35px 150px
+    @media (max-width: 640px)
+        padding: 80px 15px 0
+        .h2
+            font-size: 35px
+    .button-star
+        margin-top: 70px
+        display: flex
+        align-items: center
+        justify-content: center
+        @media (max-width: 640px)
+            margin-top: 35px
+        .button
+            background-color: #fff
+            display: block
+            margin: 0 25px
+            font-size: 20px
+            color: $base
+            @media (max-width: 640px)
+                font-size: 14px
+.form
+    background-color: $bg
+    padding: 150px 35px 150px
+    @media (max-width: 640px)
+        padding: 80px 15px
+        .h2
+            font-size: 35px
+    background: rgb(12,47,65)
+    background: linear-gradient(180deg, #0c2736 20%, rgba(31,119,166,1) 60%)
+    .wrapper
+        width: 100%
+        max-width: 800px
+        margin: 0 auto 0
+        position: relative
+        @media (max-width: 640px)
+            width: 90%
+        .bottom, .top
+            position: absolute
+            svg
+                width: 70px!important
+                @media (max-width: 640px)
+                    width: 30px!important
+        .top
+            right: -30px
+            top: -20px
+        .bottom
+            left: -30px
+            bottom: -20px
+    .container
+        width: 100%
+        margin: 150px auto 0
+        max-width: 600px
+        background-color: #fff
+        padding: 50px 35px
+        border-radius: 158px
+        min-height: 600px
+        box-sizing: border-box
+        @media (max-width: 640px)
+            margin: 35px auto
+            border-radius: 80px
+            .h2
+                font-size: 35px
+    .button
+        background-color: $base
+        display: block
+        margin: 0 25px
+        font-size: 14px
+        color: #fff
+        margin: 0 auto
+    .bye-svg
+            width: 100%
+            height: auto
+            svg
+                max-width: 100%
+.fade-in-image
+    animation: fadeIn 1s 
+
+.fade-in-image-2
+    animation: fadeIn 2s 
+
+@keyframes fadeIn 
+  0%
+    opacity: 0 
+  100%
+    opacity: 1
+
+
+    
+
+        

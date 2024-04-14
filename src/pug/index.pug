@@ -1,0 +1,98 @@
+include partials/_head
+
+body 
+    block content
+        div.intro
+            img(src='assets/images/LyB-0.jpg')
+            div.sparks
+                div.sparks-l.opacity-fade.fade-in-image
+                    include svg/sparks-l.pug
+                div.sparks-r.opacity-fade-2.fade-in-image-2
+                    include svg/sparks-r.pug
+            div.main-title
+                h1.h1 Nuestra Boda
+                div.datos.crimson-semibold
+                    p.nombres Lizzy & Beto
+                    span
+                    p.date 26/10/2024
+
+        div.invited
+            include svg/invited.pug
+            div.title.centered
+                h2.h2 Estás invitado
+                p.work-sans Queremos que nos acompañes en este momento tan especial
+                div.counter#counter
+                    div.meses
+                        p.num.aesthetic#dias 0
+                        p.name.work-sans Días
+                    div.dias
+                        p.num.aesthetic#horas 0
+                        p.name.work-sans Horas
+                    div.horas
+                        p.num.aesthetic#minutos 0
+                        p.name.work-sans Minutos
+                    div.mins
+                        p.num.aesthetic#segundos 0
+                        p.name.work-sans Segundos
+
+        div.fecha
+            div.title.centered.work-sans
+                h2.h2 26 DE octubre del 2024
+                div.itinerario
+                    include svg/sparkles-date.pug
+                    div.horarios.crimson-semibold
+                        div.horario
+                            p.nombres Ceremonia
+                            span
+                            p.date 7:30 pm
+                        div.horario.rob
+                            p.nombres Icebreaker
+                            span
+                            p.date 8:00pm - 9:00pm
+                            p.work-sans Cantante: Rob Dyeet
+                        div.horario
+                            p.nombres Recepción
+                            span
+                            p.date 9:00pm - 1:30am
+        div.map
+            iframe(src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3602.038023248332!2d-100.93295638760063!3d25.470405777442515!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8688125e90473065%3A0x81c57fcb27d37628!2sQuinta%20Los%20Pastores!5e0!3m2!1sen!2smx!4v1712518627964!5m2!1sen!2smx' style='border:0;' allowfullscreen='' loading='lazy' referrerpolicy='no-referrer-when-downgrade')
+
+        div.fotos
+            div.one
+                img(src='assets/images/LyB-1.jpg')
+            div.two
+                img(src='assets/images/LyB-2.jpg')
+            div.three
+                img(src='assets/images/LyB-3.jpg')
+            div.four
+                img(src='assets/images/LyB-4.jpg')
+            div.five
+                img(src='assets/images/LyB-5.jpg')
+            div.six
+                img(src='assets/images/LyB-6.jpg')
+
+        div.mesa
+            div.title.centered.work-sans
+                h2.h2 Mesa de regalos
+                div.button-star
+                    include svg/button.pug
+                    a.button.work-sans-semibold(href="https://www.amazon.com.mx/wedding/registry/3GQ7XWJ9LJKKD", target="_blank") Ir a la mesa de regalos
+                    include svg/button.pug
+        
+        div.form
+            div.title.centered.work-sans
+                h2.h2 Confirmar asistencia
+                div.wrapper
+                    div.bottom 
+                        include svg/sparkles-form-bottom.pug
+                    div.top
+                        include svg/sparkles-form-top.pug
+                    form.container.centered
+                        // <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSecJLoDbosrX9jF-Z-UtUzD2gdMBinoOzRGN3LWH13dFFdtlg/viewform?embedded=true" width="100%" height="561" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+                        // button.button.work-sans-semibold Enviar
+            div.bye.centered
+                div.bye-svg
+                    include svg/bye.pug
+                h2.h2 ¡Te esperamos!
+
+
