@@ -1,0 +1,39 @@
+.contacto
+    .container
+        .datos
+            .whatsapp
+                .icon 
+                    include ../svg/whatsapp-icon
+                .title.extra-bold Teléfono y Whatsapp
+                .dato.medium
+                   | T. +52 844 488 69 52/53
+                   br
+                   | WA.+528441002616
+            .direccion
+                .icon
+                    include ../svg/direccion
+                .title.extra-bold Dirección
+                .dato.medium
+                    | Prolongación Morelos 2200 
+                    br
+                    | Zona Industrial Ramos Arizpe 
+                    br
+                    | Coahuila, México | CP 25900
+            .correo
+                .icon
+                    include ../svg/correo
+                .title.extra-bold Correo Electrónico
+                .dato.medium
+                    a(href="mailto:info@ecogrupo.com.mx") info@ecogrupo.com.mx
+        .form
+            form
+                .input
+                    label Nombre 
+                    input(type="text")
+                .input
+                    label Email 
+                    input(type="text")
+                .input
+                    label Mensaje 
+                    textarea(name="Mensaje") 
+                button.centered(type="submit").blue Enviar 
