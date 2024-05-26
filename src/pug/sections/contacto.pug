@@ -26,14 +26,14 @@
                 .dato.medium
                     a(href="mailto:info@ecogrupo.com.mx") info@ecogrupo.com.mx
         .form
-            form
+            form(method="POST" action="./mail.php" id="contact-form")
                 .input
                     label Nombre 
-                    input(type="text")
+                    input(type="text" name="nombre")#nombre
                 .input
                     label Email 
-                    input(type="text")
+                    input(type="text" name="email")#email
                 .input
                     label Mensaje 
-                    textarea(name="Mensaje") 
+                    textarea(name="Mensaje")#mensaje
                 button.centered(type="submit").blue Enviar 
