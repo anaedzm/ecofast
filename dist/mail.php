@@ -1,24 +1,22 @@
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    if(
-        !empty($_POST['nombre'])
-        && !empty($_POST['email'])
-        && !empty($_POST['mensaje'])
-    ){
-        $nombre = $_POST["nombre"];
-        $email = $_POST["email"];
-        $mensaje = $_POST["mensaje"];
+<?php
 
+	$to = "anaedzm@gmail.com";
+    $from = $_REQUEST['email'];
+    $name = $_REQUEST['name'];
+    $subject = "Contacto Ecofast";
+	
+	$headers = "From: $name\r\n";  
+	$headers .= "X-Mailer: PHP5\n";
+	$headers .= 'MIME-Version: 1.0' . "\n";
+	$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
 
-        $to = "your@email.com";
-        $subject = "New Contact Form Submission";
-        $body = "Nombre: {$nombre}\nEmail: {$email}\nMensaje: {$mensaje}";
-        $headers = "From: {$email}";
+    $fields = array();
+    $fields{"nombre"} = "Nombre";
+    $fields{"email"} = "Email";
+    $fields{"mensaje"} = "Mensaje";
 
+    $body = "Mensaje recibido:<br>\r\n"; foreach($fields as $a => $b){   $body .= sprintf("%20s: %s\n<br>",$b,$_REQUEST[$a],"<br>"); }
 
-        if (mail($to, $subject, $body, $headers)) {
-            echo "Message sent successfully!";
-        } else {
-            echo "Failed to send message.";
-        }
-    }
-}
+    $send = mail($to, $subject, $body, $headers);
+
+?>

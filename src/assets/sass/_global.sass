@@ -16,7 +16,18 @@ a, button
   text-decoration: inherit
   border: 0
 
-button, .button
+
+#submit
+    cursor: pointer
+    background: none
+    color: inherit
+    border: none
+    padding: 0
+    font: inherit
+    cursor: pointer
+    outline: inherit
+
+button, .button, #submit
     cursor: pointer
     max-width: 300px
     width: 100%
@@ -286,20 +297,21 @@ svg
         form
             max-width: 760px
             margin: 80px auto 0 
-            .input
-                input, textarea
-                    display: block
-                    width: 100%
-                    padding: 7px 15px
-                    color: $black
-                    box-sizing: border-box
-                textarea
-                    min-height: 150px
-                    margin-bottom: 3rem
-                    resize: none
-                
-                margin-bottom: 1rem
+            input, textarea
                 display: block
+                width: 100%
+                padding: 7px 15px
+                margin-bottom: 15px
+                color: $black
+                box-sizing: border-box
+                font-family: inherit
+            textarea
+                min-height: 150px
+                resize: none
+                font-family: inherit
+            
+            margin-bottom: 1rem
+            display: block
 
 .carousel
     width: 100%
@@ -348,3 +360,84 @@ svg
             img
                 width: 100%
                 height: 100%
+
+.hide
+  display: none
+
+.ajaxgif
+  position: absolute
+  right: 15px
+  top: 5px
+
+.msg
+  color: white
+
+  /* font-weight: bold;
+  width: 40%
+  font-size: 12px
+  height: 33px
+  line-height: 32px
+  padding: 0 10px
+  position: absolute
+  right: 0px !important
+  margin-top: 5px
+
+  /* text-transform: uppercase;
+  min-width: 121px
+  text-align: center
+
+.msg_ok
+  background: #589D05
+
+.msg_error
+  background: red
+
+form
+  margin: 0
+
+  label.error
+    font-size: 12px
+    line-height: 12px
+    font-size: 1rem
+    line-height: 1.2rem
+    color: #c0392b
+    display: none
+
+fieldset
+  border: 0px
+  margin: 0
+  padding: 0
+
+.required
+  color: #e9266d
+
+#success, #error
+  display: none
+  font-size: 12px
+
+#success span, #error span
+  display: block
+  position: absolute
+  top: 0
+  width: 100%
+
+#success span p, #error span p
+  margin-top: 4em
+
+#success span p
+  font-size: 25px
+  text-decoration: underline
+  margin-top: 100px
+
+#error span p
+  font-size: 15px
+  margin-top: 100px
+
+.mensaje-preview
+    position: fixed
+    top: 0
+    left: 0
+    width: 100%
+    background: red
+    color: white
+    z-index: 9

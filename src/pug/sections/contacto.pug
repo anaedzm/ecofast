@@ -25,15 +25,88 @@
                 .title.extra-bold Correo Electrónico
                 .dato.medium
                     a(href="mailto:info@ecogrupo.com.mx") info@ecogrupo.com.mx
-        //- .form
-        //-     form(method="POST" action="./mail.php" id="contact-form")
-        //-         .input
-        //-             label Nombre 
-        //-             input(type="text" name="nombre")#nombre
-        //-         .input
-        //-             label Email 
-        //-             input(type="text" name="email")#email
-        //-         .input
-        //-             label Mensaje 
-        //-             textarea(name="Mensaje")#mensaje
-        //-         button.centered(type="submit").blue Enviar 
+        .form
+            #forma
+                form#contact.contact(name='contact' method='post' novalidate='novalidate')
+                    fieldset
+                        input#name(type='text' name='name' size='30' value='' required='' placeholder='Nombre')
+                        input#email(type='text' name='email' size='30' value='' required='' placeholder='Email')
+                        textarea#message(name='message' required='' placeholder='Mensaje')
+                        input#submit.blue.centered(type='submit' name='submit' value='Enviar')
+                #success
+                    span.green.textcenter
+                    p Tu mensaje ha sido enviado, pronto estaremos en contacto.
+                #error
+                    span
+                    p Algo ha salido mal, refresca el sitio e intenta de nuevo.
+
+
+script(src='//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js')
+script.
+  window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\\/script>')
+script(src='//cdnjs.cloudflare.com/ajax/libs/jquery.form/3.32/jquery.form.js')
+script(src='//cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.11.1/jquery.validate.min.js')
+script.
+  jQuery.validator.addMethod('answercheck', function (value, element) {
+    return this.optional(element) || /^\bcat\b$/.test(value);
+    }, "type the correct answer -_-");
+
+    // validate contact form
+    $(function() {
+    $('#contact').validate({
+        rules: {
+            name: {
+                required: true,
+                minlength: 2
+            },
+            email: {
+                required: true,
+                email: true
+            },
+            message: {
+                required: true
+            },
+            answer: {
+                required: true,
+                answercheck: true
+            }
+        },
+        messages: {
+            name: {
+                required: "Este campo es requerido",
+                minlength: "Tu nombre debe tener al menos 2 letras"
+            },
+            email: {
+                required: "Por favor escribe tu correo"
+            },
+            message: {
+                required: "Este campo es requerido",
+                minlength: "El mensaje debe ser más largo"
+            },
+            answer: {
+                required: "sorry, wrong answer!"
+            }
+        },
+        submitHandler: function(form) {
+            $(form).ajaxSubmit({
+                type:"POST",
+                data: $(form).serialize(),
+                url:"mail.php",
+                success: function() {
+                    $('#contact :input').attr('disabled', 'disabled');
+                    $('#contact').fadeTo( "slow", 0, function() {
+                        $(this).find(':input').attr('disabled', 'disabled');
+                        $(this).find('label').css('cursor','default');
+                        $('#success').fadeIn();
+                    });
+                },
+                error: function() {
+                    $('#contact').fadeTo( "slow", 0.15, function() {
+                        $('#error').fadeIn();
+                    });
+                }
+            });
+        }
+    });
+    });
+
