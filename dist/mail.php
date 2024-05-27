@@ -1,6 +1,6 @@
 <?php
 
-	$to = "anaedzm@gmail.com";
+	$to = "info@ecogrupo.com.mx";
     $from = $_REQUEST['email'];
     $name = $_REQUEST['name'];
     $subject = "Contacto Ecofast";
